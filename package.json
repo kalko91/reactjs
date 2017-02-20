@@ -1,0 +1,32 @@
+{
+  "name": "ReactNativeTS",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "preinstall": "rm -rf typings",
+    "postinstall": "node node_modules/typings/dist/bin.js install",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "android": "node node_modules/react-native/local-cli/cli.js run-android",
+    "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
+    "prebuild": "rm -rf build",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@types/react": "^15.0.10",
+    "@types/react-native": "^0.37.12",
+    "react": "15.4.2",
+    "react-native": "0.41.2"
+  },
+  "devDependencies": {
+    "babel-jest": "18.0.0",
+    "babel-preset-react-native": "1.9.1",
+    "jest": "18.1.0",
+    "react-test-renderer": "15.4.2",
+    "tslint": "^4.4.2",
+    "typescript": "^2.1.6",
+    "typings": "^2.1.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
