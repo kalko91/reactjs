@@ -1,6 +1,8 @@
 'use strict';
-
 import React, {Component} from 'react';
+// var SearchPage = require('./build/SearchPage').default
+import SearchPage from './build/SearchPage';
+import SearchResults from './build/SearchResults';
 import {
   AppRegistry,
   StyleSheet,
@@ -40,25 +42,23 @@ export default class HelloWorld extends Component {
  class ReactNativeTS extends Component {
   render() {
     return (
-      // <HelloWorld />
-        <Navigator
-        initialRoute={{ title: 'My Initial Scene', index: 0 }}
+      <Navigator
+        initialRoute={{title:'Index Page', index: 0 }}
+        configureScene={(route, routeStack) =>
+          Navigator.SceneConfigs.FloatFromRight}
         renderScene={(route, navigator) => {
-          return <HelloWorld title={route.title}/>
+          console.debug(route);
+            if(route.index == 0) {
+             return <SearchPage navigator={navigator}/>
+            }
+            if(route.index == 1) {
+             return <SearchResults navigator={navigator} {...route.passProps}/>
+            }
         }}
       />
-      // <View style={styles.container}>
-      // <Navigator
-      // style={styles.nav}
-      // initialRoute={{
-      //   title: 'Property Finder',
-      //   component: HelloWorld,
-      // }}/>
-      // </View>
       );
   }
 }
-
 
 const styles = StyleSheet.create({
   container: {
@@ -81,5 +81,6 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
 
 AppRegistry.registerComponent('ReactNativeTS', () => ReactNativeTS);
