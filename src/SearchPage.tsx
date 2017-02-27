@@ -142,8 +142,11 @@ const styles = StyleSheet.create({
   }  as React.ViewStyle,
   container: {
     padding: 30,
-    marginTop: 65,
-    alignItems: 'center'
+    paddingTop:95,
+    marginTop: 0,
+    alignItems: 'center',
+    backgroundColor:'white',
+    height:1000
   } as React.ViewStyle,
   flowRight: {
     flexDirection: 'row',

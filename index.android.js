@@ -12,6 +12,7 @@ import {
 
 } from 'react-native';
 
+
 export default class HelloWorld extends Component {
   static get defaultProps() {
    return {

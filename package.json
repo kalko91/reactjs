@@ -7,6 +7,7 @@
     "postinstall": "node node_modules/typings/dist/bin.js install",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "android": "node node_modules/react-native/local-cli/cli.js run-android",
+    "android:apk": "node node_modules/react-native/local-cli/cli.js run-android --variant=release",
     "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
     "prebuild": "rm -rf build",
     "build": "tsc"

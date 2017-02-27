@@ -7,6 +7,7 @@ https://facebook.github.io/react-native/releases/0.23/docs/debugging.html#live-r
 
 https://facebook.github.io/react-native/releases/0.27/docs/running-on-device-android.html#configure-your-app-to-connect-to-the-local-dev-server-via-wi-fi
 adb shell input keyevent 82
+adb reverse tcp:8097 tcp:8097
 
 npm run build -- --watch
 
